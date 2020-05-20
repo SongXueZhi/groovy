@@ -102,7 +102,6 @@ class Slf4jTest extends GroovyTestCase {
         Class clazz = new GroovyClassLoader().parseClass('''
           @groovy.util.logging.Slf4j
           class MyClass {
-
               def loggingMethod() {
                   log.error ("error called")
                   log.warn  ("warn called")
@@ -154,7 +153,6 @@ class Slf4jTest extends GroovyTestCase {
         Class clazz = new GroovyClassLoader().parseClass('''
           @groovy.util.logging.Slf4j('logger')
           class MyClass {
-
               def loggingMethod() {
                   logger.error ("error called")
                   logger.warn  ("warn called")
@@ -262,6 +260,26 @@ class Slf4jTest extends GroovyTestCase {
         s.loggingMethod()
 
         assert appender.getEvents().size() == 1
+    }
+
+    void testGroovy6873Regression() {
+        Class clazz = new GroovyClassLoader().parseClass("""
+            @groovy.util.logging.Slf4j
+            class Channel {
+                private void someMethod(String folder)  {
+                  final includeHidden = false
+                   new Runnable() {
+                            @Override
+                            public void run() {
+                                if (includeHidden) {
+                                }
+                            }
+                        }
+                }
+                void otherMethod() {
+                    def folder
+                }
+            }""")
     }
 
     void testCustomCategory() {
