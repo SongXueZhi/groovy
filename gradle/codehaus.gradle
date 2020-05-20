@@ -4,7 +4,7 @@ import groovy.io.*
 
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url "https://repo1.maven.org/maven2/" }
     }
     dependencies {
         classpath 'com.github.lookfirst:sardine:5.0.1'

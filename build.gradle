@@ -7,7 +7,7 @@ if (JavaVersion.current().java6Compatible) {
 
 buildscript {
     repositories {
-        jcenter()
+        jcenter { url "https://jcenter.bintray.com/" }
         maven {
             name 'Bintray Asciidoctor repo'
             url 'http://dl.bintray.com/content/aalmiray/asciidoctor'
@@ -37,7 +37,7 @@ allprojects {
     group = 'org.codehaus.groovy'
     version = groovyVersion
     repositories {
-        jcenter()
+        jcenter { url "https://jcenter.bintray.com/" }
     }
 
     apply plugin: 'groovy'
@@ -109,16 +109,16 @@ ext {
     ivyVersion = '2.4.0-rc1'
     jansiVersion = '1.11'
     jarjarVersion = '1.3'
-    jlineVersion = '2.11'
+    jlineVersion = '2.12'
     jmockVersion = '1.2.0'
-    logbackVersion = '1.0.13'
+    logbackVersion = '1.1.2'
     log4jVersion = '1.2.17'
     log4j2Version = '2.0-rc1'
     luceneVersion = '4.7.2'
     openejbVersion = '1.0'
     qdoxVersion = '1.12.1'
     simianVersion = '2.2.4'
-    slf4jVersion = '1.7.5'
+    slf4jVersion = '1.7.6'
     xmlunitVersion = '1.5'
     xstreamVersion = '1.4.7'
 }
