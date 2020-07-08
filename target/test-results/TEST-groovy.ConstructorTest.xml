@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="groovy.ConstructorTest" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="e38ffdbd1463" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Hey
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

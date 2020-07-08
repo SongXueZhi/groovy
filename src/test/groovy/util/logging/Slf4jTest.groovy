@@ -180,27 +180,6 @@ class Slf4jTest extends GroovyTestCase {
         assert events[++ind].level == Level.TRACE
         assert events[ind].message == "trace called"
     }
-
-    void testLogTransformInteractionWithAIC_groovy6834() {
-        assertScript '''
-            @groovy.util.logging.Slf4j
-            class MyClass {
-                static myMethod() {
-                    String message = 'hello'
-                    String audience = 'world'
-                    String result
-                    new Runnable() {
-                        void run() {
-                            result = "$message $audience"
-                        }
-                    }.run()
-                    result
-                }
-            }
-            assert MyClass.myMethod() == 'hello world'
-        '''
-    }
-
     void testLogWithInnerClasses_groovy6373() {
         Class clazz = new GroovyClassLoader().parseClass('''
             @groovy.util.logging.Slf4j('logger')
