@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="groovy.util.logging.Slf4jTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-07-08T07:06:11" hostname="e38ffdbd1463" time="2.546">
+  <properties/>
+  <testcase name="testLogWithInnerClasses_groovy6373" classname="groovy.util.logging.Slf4jTest" time="1.429"/>
+  <testcase name="testPrivateFinalStaticLogFieldAppears" classname="groovy.util.logging.Slf4jTest" time="0.166"/>
+  <testcase name="testClassAlreadyHasNamedLogField" classname="groovy.util.logging.Slf4jTest" time="0.062"/>
+  <testcase name="testPrivateFinalStaticNamedLogFieldAppears" classname="groovy.util.logging.Slf4jTest" time="0.062"/>
+  <testcase name="testLogGuard" classname="groovy.util.logging.Slf4jTest" time="0.11"/>
+  <testcase name="testLogFromStaticMethods" classname="groovy.util.logging.Slf4jTest" time="0.078"/>
+  <testcase name="testLogInfo" classname="groovy.util.logging.Slf4jTest" time="0.088"/>
+  <testcase name="testGroovy6873Regression" classname="groovy.util.logging.Slf4jTest" time="0.056"/>
+  <testcase name="testCustomCategory" classname="groovy.util.logging.Slf4jTest" time="0.065"/>
+  <testcase name="testLogInfoWithNamedLogger" classname="groovy.util.logging.Slf4jTest" time="0.081"/>
+  <testcase name="testLogTransformInteractionWithAIC_groovy6834" classname="groovy.util.logging.Slf4jTest" time="0.256"/>
+  <testcase name="testClassAlreadyHasLogField" classname="groovy.util.logging.Slf4jTest" time="0.021"/>
+  <testcase name="testDefaultCategory" classname="groovy.util.logging.Slf4jTest" time="0.044"/>
+  <system-out><![CDATA[LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+07:06:12.604 [Test worker] INFO  MyClass - outer called
+07:06:12.621 [Test worker] INFO  MyClass - inner called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+07:06:13.164 [Test worker] INFO  MyClass - (static) info called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+07:06:13.252 [Test worker] ERROR MyClass - error called
+07:06:13.256 [Test worker] WARN  MyClass - warn called
+07:06:13.257 [Test worker] INFO  MyClass - info called
+07:06:13.259 [Test worker] DEBUG MyClass - debug called
+07:06:13.266 [Test worker] TRACE MyClass - trace called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+07:06:13.375 [Test worker] ERROR customCategory - error called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+07:06:13.473 [Test worker] ERROR MyClass - error called
+07:06:13.473 [Test worker] WARN  MyClass - warn called
+07:06:13.474 [Test worker] INFO  MyClass - info called
+07:06:13.474 [Test worker] DEBUG MyClass - debug called
+07:06:13.474 [Test worker] TRACE MyClass - trace called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+07:06:13.803 [Test worker] INFO  MyClass - info called
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
