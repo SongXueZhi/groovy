@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Originally-Created-By: 1.8.0_252-8u252-b09-1~16.04-b09 (Private Build)
+Export-Package: groovy.lang;version="2.4.0.SNAPSHOT",groovy.mock.inter
+ ceptor;version="2.4.0.SNAPSHOT",groovy.test;version="2.4.0.SNAPSHOT",
+ groovy.transform;version="2.4.0.SNAPSHOT",groovy.util;version="2.4.0.
+ SNAPSHOT",org.codehaus.groovy.runtime;version="2.4.0.SNAPSHOT",org.co
+ dehaus.groovy.transform;version="2.4.0.SNAPSHOT"
+Bundle-SymbolicName: groovy-test
+Bundle-Version: 2.4.0.SNAPSHOT
+Bundle-ManifestVersion: 2
+Import-Package: junit.framework;resolution:=optional,junit.textui;reso
+ lution:=optional,org.codehaus.groovy.ast;resolution:=optional,org.cod
+ ehaus.groovy.ast.expr;resolution:=optional,org.codehaus.groovy.ast.st
+ mt;resolution:=optional,org.codehaus.groovy.control;resolution:=optio
+ nal,org.codehaus.groovy.reflection;resolution:=optional,org.codehaus.
+ groovy.runtime.powerassert;resolution:=optional,org.codehaus.groovy.r
+ untime.typehandling;resolution:=optional,org.codehaus.groovy.runtime.
+ wrappers;resolution:=optional,org.codehaus.groovy.vmplugin.v7;resolut
+ ion:=optional,org.junit;resolution:=optional
+Created-By: 1.8.0_252 (Private Build)
+Tool: Bnd-2.1.0.20130426-122213
+Built-By: root
+Specification-Title: Groovy: a powerful, dynamic language for the JVM
+Specification-Version: 2.4.0.SNAPSHOT
+Specification-Vendor: The Codehaus
+Implementation-Title: Groovy: a powerful, dynamic language for the JVM
+Implementation-Version: 2.4.0.SNAPSHOT
+Implementation-Vendor: The Codehaus
+Bundle-Vendor: The Codehaus
+Bundle-ClassPath: .
+Eclipse-BuddyPolicy: dependent
+DynamicImport-Package: *
+

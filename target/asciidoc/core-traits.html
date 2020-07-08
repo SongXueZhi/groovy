@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="Asciidoctor 0.1.4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traits</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden] { display: none; }
+html { background: #fff; color: #000; font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+a:focus { outline: thin dotted; }
+a:active, a:hover { outline: 0; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+dfn { font-style: italic; }
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+mark { background: #ff0; color: #000; }
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+pre { white-space: pre-wrap; }
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+img { border: 0; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+legend { border: 0; padding: 0; }
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }
+button, input { line-height: normal; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; }
+table { border-collapse: collapse; border-spacing: 0; }
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+html, body { font-size: 100%; }
+body { background: white; color: #222222; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
+a:hover { cursor: pointer; }
+a:focus { outline: none; }
+img, object, embed { max-width: 100%; height: auto; }
+object, embed { height: 100%; }
+img { -ms-interpolation-mode: bicubic; }
+#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object { max-width: none !important; }
+.left { float: left !important; }
+.right { float: right !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+.text-justify { text-align: justify !important; }
+.hide { display: none; }
+.antialiased, body { -webkit-font-smoothing: antialiased; }
+img { display: inline-block; vertical-align: middle; }
+textarea { height: auto; min-height: 50px; }
+select { width: 100%; }
+p.lead, .paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
+.subheader, #content #toctitle, .admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, .tableblock > caption { line-height: 1.4; color: #7a2518; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; direction: ltr; }
+a { color: #005498; text-decoration: underline; line-height: inherit; }
+a:hover, a:focus { color: #00467f; }
+a img { border: none; }
+p { font-family: inherit; font-weight: normal; font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; text-rendering: optimizeLegibility; }
+p aside { font-size: 0.875em; line-height: 1.35; font-style: italic; }
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { font-family: Georgia, "URW Bookman L", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; color: #ba3925; text-rendering: optimizeLegibility; margin-top: 1em; margin-bottom: 0.5em; line-height: 1.2125em; }
+h1 small, h2 small, h3 small, #toctitle small, .sidebarblock > .content > .title small, h4 small, h5 small, h6 small { font-size: 60%; color: #e99b8f; line-height: 0; }
+h1 { font-size: 2.125em; }
+h2 { font-size: 1.6875em; }
+h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.375em; }
+h4 { font-size: 1.125em; }
+h5 { font-size: 1.125em; }
+h6 { font-size: 1em; }
+hr { border: solid #dddddd; border-width: 1px 0 0; clear: both; margin: 1.25em 0 1.1875em; height: 0; }
+em, i { font-style: italic; line-height: inherit; }
+strong, b { font-weight: bold; line-height: inherit; }
+small { font-size: 60%; line-height: inherit; }
+code { font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; color: #6d180b; }
+ul, ol, dl { font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; list-style-position: outside; font-family: inherit; }
+ul, ol { margin-left: 1.5em; }
+ul li ul, ul li ol { margin-left: 1.25em; margin-bottom: 0; font-size: 1em; }
+ul.square li ul, ul.circle li ul, ul.disc li ul { list-style: inherit; }
+ul.square { list-style-type: square; }
+ul.circle { list-style-type: circle; }
+ul.disc { list-style-type: disc; }
+ul.no-bullet { list-style: none; }
+ol li ul, ol li ol { margin-left: 1.25em; margin-bottom: 0; }
+dl dt { margin-bottom: 0.3125em; font-weight: bold; }
+dl dd { margin-bottom: 1.25em; }
+abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222222; border-bottom: 1px dotted #dddddd; cursor: help; }
+abbr { text-transform: none; }
+blockquote { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
+blockquote cite { display: block; font-size: inherit; color: #555555; }
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a, blockquote cite a:visited { color: #555555; }
+blockquote, blockquote p { line-height: 1.6; color: #6f6f6f; }
+.vcard { display: inline-block; margin: 0 0 1.25em 0; border: 1px solid #dddddd; padding: 0.625em 0.75em; }
+.vcard li { margin: 0; display: block; }
+.vcard .fn { font-weight: bold; font-size: 0.9375em; }
+.vevent .summary { font-weight: bold; }
+.vevent abbr { cursor: auto; text-decoration: none; font-weight: bold; border: none; padding: 0 0.0625em; }
+@media only screen and (min-width: 768px) { h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { line-height: 1.4; }
+  h1 { font-size: 2.75em; }
+  h2 { font-size: 2.3125em; }
+  h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.6875em; }
+  h4 { font-size: 1.4375em; } }
+.print-only { display: none !important; }
+@media print { * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3, #toctitle, .sidebarblock > .content > .title { orphans: 3; widows: 3; }
+  h2, h3, #toctitle, .sidebarblock > .content > .title { page-break-after: avoid; }
+  .hide-on-print { display: none !important; }
+  .print-only { display: block !important; }
+  .hide-for-print { display: none !important; }
+  .show-for-print { display: inherit !important; } }
+table { background: white; margin-bottom: 1.25em; border: solid 1px #dddddd; }
+table thead, table tfoot { background: whitesmoke; font-weight: bold; }
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { padding: 0.5em 0.625em 0.625em; font-size: inherit; color: #222222; text-align: left; }
+table tr th, table tr td { padding: 0.5625em 0.625em; font-size: inherit; color: #222222; }
+table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #f9f9f9; }
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td { display: table-cell; line-height: 1.6; }
+.clearfix:before, .clearfix:after, .float-group:before, .float-group:after { content: " "; display: table; }
+.clearfix:after, .float-group:after { clear: both; }
+*:not(pre) > code { font-size: 0.9375em; padding: 1px 3px 0; white-space: nowrap; background-color: #f2f2f2; border: 1px solid #cccccc; -webkit-border-radius: 4px; border-radius: 4px; text-shadow: none; }
+pre, pre > code { line-height: 1.4; color: inherit; font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; }
+kbd.keyseq { color: #555555; }
+kbd:not(.keyseq) { display: inline-block; color: #222222; font-size: 0.75em; line-height: 1.4; background-color: #F7F7F7; border: 1px solid #ccc; -webkit-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; margin: -0.15em 0.15em 0 0.15em; padding: 0.2em 0.6em 0.2em 0.5em; vertical-align: middle; white-space: nowrap; }
+kbd kbd:first-child { margin-left: 0; }
+kbd kbd:last-child { margin-right: 0; }
+.menuseq, .menu { color: #090909; }
+p a > code:hover { color: #561309; }
+#header, #content, #footnotes, #footer { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; position: relative; padding-left: 0.9375em; padding-right: 0.9375em; }
+#header:before, #header:after, #content:before, #content:after, #footnotes:before, #footnotes:after, #footer:before, #footer:after { content: " "; display: table; }
+#header:after, #content:after, #footnotes:after, #footer:after { clear: both; }
+#header { margin-bottom: 2.5em; }
+#header > h1 { color: black; font-weight: normal; border-bottom: 1px solid #dddddd; margin-bottom: -28px; padding-bottom: 32px; }
+#header span { color: #6f6f6f; }
+#header #revnumber { text-transform: capitalize; }
+#header br { display: none; }
+#header br + span { padding-left: 3px; }
+#header br + span:before { content: "\2013 \0020"; }
+#header br + span.author { padding-left: 0; }
+#header br + span.author:before { content: ", "; }
+#toc { border-bottom: 3px double #ebebeb; padding-bottom: 1.25em; }
+#toc > ul { margin-left: 0.25em; }
+#toc ul.sectlevel0 > li > a { font-style: italic; }
+#toc ul.sectlevel0 ul.sectlevel1 { margin-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
+#toc ul { list-style-type: none; }
+#toctitle { color: #7a2518; }
+@media only screen and (min-width: 1280px) { body.toc2 { padding-left: 20em; }
+  #toc.toc2 { position: fixed; width: 20em; left: 0; top: 0; border-right: 1px solid #ebebeb; border-bottom: 0; z-index: 1000; padding: 1em; height: 100%; overflow: auto; }
+  #toc.toc2 #toctitle { margin-top: 0; }
+  #toc.toc2 > ul { font-size: .95em; }
+  #toc.toc2 ul ul { margin-left: 0; padding-left: 1.25em; }
+  #toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
+  body.toc2.toc-right { padding-left: 0; padding-right: 20em; }
+  body.toc2.toc-right #toc.toc2 { border-right: 0; border-left: 1px solid #ebebeb; left: auto; right: 0; } }
+#content #toc { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; border-width: 0; -webkit-border-radius: 4px; border-radius: 4px; }
+#content #toc > :first-child { margin-top: 0; }
+#content #toc > :last-child { margin-bottom: 0; }
+#content #toc a { text-decoration: none; }
+#content #toctitle { font-weight: bold; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-size: 1em; padding-left: 0.125em; }
+#footer { max-width: 100%; background-color: #222222; padding: 1.25em; }
+#footer-text { color: #dddddd; line-height: 1.44; }
+.sect1 { padding-bottom: 1.25em; }
+.sect1 + .sect1 { border-top: 3px double #ebebeb; }
+#content h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor { position: absolute; width: 1em; margin-left: -1em; display: block; text-decoration: none; visibility: hidden; text-align: center; font-weight: normal; }
+#content h1 > a.anchor:before, h2 > a.anchor:before, h3 > a.anchor:before, #toctitle > a.anchor:before, .sidebarblock > .content > .title > a.anchor:before, h4 > a.anchor:before, h5 > a.anchor:before, h6 > a.anchor:before { content: '\00A7'; font-size: .85em; vertical-align: text-top; display: block; margin-top: 0.05em; }
+#content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover { visibility: visible; }
+#content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link { color: #ba3925; text-decoration: none; }
+#content h1 > a.link:hover, h2 > a.link:hover, h3 > a.link:hover, #toctitle > a.link:hover, .sidebarblock > .content > .title > a.link:hover, h4 > a.link:hover, h5 > a.link:hover, h6 > a.link:hover { color: #a53221; }
+.imageblock, .literalblock, .listingblock, .verseblock, .videoblock { margin-bottom: 1.25em; }
+.admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-align: left; font-weight: bold; }
+.tableblock > caption { text-align: left; font-weight: bold; white-space: nowrap; overflow: visible; max-width: 0; }
+table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-size: inherit; }
+.admonitionblock > table { border: 0; background: none; width: 100%; }
+.admonitionblock > table td.icon { text-align: center; width: 80px; }
+.admonitionblock > table td.icon img { max-width: none; }
+.admonitionblock > table td.icon .title { font-weight: bold; text-transform: uppercase; }
+.admonitionblock > table td.content { padding-left: 1.125em; padding-right: 1.25em; border-left: 1px solid #dddddd; color: #6f6f6f; }
+.admonitionblock > table td.content > :last-child > :last-child { margin-bottom: 0; }
+.exampleblock > .content { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: white; -webkit-border-radius: 4px; border-radius: 4px; }
+.exampleblock > .content > :first-child { margin-top: 0; }
+.exampleblock > .content > :last-child { margin-bottom: 0; }
+.exampleblock > .content h1, .exampleblock > .content h2, .exampleblock > .content h3, .exampleblock > .content #toctitle, .sidebarblock.exampleblock > .content > .title, .exampleblock > .content h4, .exampleblock > .content h5, .exampleblock > .content h6, .exampleblock > .content p { color: #333333; }
+.exampleblock > .content h1, .exampleblock > .content h2, .exampleblock > .content h3, .exampleblock > .content #toctitle, .sidebarblock.exampleblock > .content > .title, .exampleblock > .content h4, .exampleblock > .content h5, .exampleblock > .content h6 { line-height: 1; margin-bottom: 0.625em; }
+.exampleblock > .content h1.subheader, .exampleblock > .content h2.subheader, .exampleblock > .content h3.subheader, .exampleblock > .content .subheader#toctitle, .sidebarblock.exampleblock > .content > .subheader.title, .exampleblock > .content h4.subheader, .exampleblock > .content h5.subheader, .exampleblock > .content h6.subheader { line-height: 1.4; }
+.exampleblock.result > .content { -webkit-box-shadow: 0 1px 8px #d9d9d9; box-shadow: 0 1px 8px #d9d9d9; }
+.sidebarblock { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; -webkit-border-radius: 4px; border-radius: 4px; }
+.sidebarblock > :first-child { margin-top: 0; }
+.sidebarblock > :last-child { margin-bottom: 0; }
+.sidebarblock h1, .sidebarblock h2, .sidebarblock h3, .sidebarblock #toctitle, .sidebarblock > .content > .title, .sidebarblock h4, .sidebarblock h5, .sidebarblock h6, .sidebarblock p { color: #333333; }
+.sidebarblock h1, .sidebarblock h2, .sidebarblock h3, .sidebarblock #toctitle, .sidebarblock > .content > .title, .sidebarblock h4, .sidebarblock h5, .sidebarblock h6 { line-height: 1; margin-bottom: 0.625em; }
+.sidebarblock h1.subheader, .sidebarblock h2.subheader, .sidebarblock h3.subheader, .sidebarblock .subheader#toctitle, .sidebarblock > .content > .subheader.title, .sidebarblock h4.subheader, .sidebarblock h5.subheader, .sidebarblock h6.subheader { line-height: 1.4; }
+.sidebarblock > .content > .title { color: #7a2518; margin-top: 0; line-height: 1.6; }
+.exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child { margin-bottom: 0; }
+.literalblock > .content pre, .listingblock > .content pre { background: none; border-width: 1px 0; border-style: dotted; border-color: #bfbfbf; -webkit-border-radius: 4px; border-radius: 4px; padding: 0.75em 0.75em 0.5em 0.75em; word-wrap: break-word; }
+.literalblock > .content pre.nowrap, .listingblock > .content pre.nowrap { overflow-x: auto; white-space: pre; word-wrap: normal; }
+.literalblock > .content pre > code, .listingblock > .content pre > code { display: block; }
+@media only screen { .literalblock > .content pre, .listingblock > .content pre { font-size: 0.8em; } }
+@media only screen and (min-width: 768px) { .literalblock > .content pre, .listingblock > .content pre { font-size: 0.9em; } }
+@media only screen and (min-width: 1280px) { .literalblock > .content pre, .listingblock > .content pre { font-size: 1em; } }
+.listingblock > .content { position: relative; }
+.listingblock:hover code[class*=" language-"]:before { text-transform: uppercase; font-size: 0.9em; color: #999; position: absolute; top: 0.375em; right: 0.375em; }
+.listingblock:hover code.asciidoc:before { content: "asciidoc"; }
+.listingblock:hover code.clojure:before { content: "clojure"; }
+.listingblock:hover code.css:before { content: "css"; }
+.listingblock:hover code.groovy:before { content: "groovy"; }
+.listingblock:hover code.html:before { content: "html"; }
+.listingblock:hover code.java:before { content: "java"; }
+.listingblock:hover code.javascript:before { content: "javascript"; }
+.listingblock:hover code.python:before { content: "python"; }
+.listingblock:hover code.ruby:before { content: "ruby"; }
+.listingblock:hover code.scss:before { content: "scss"; }
+.listingblock:hover code.xml:before { content: "xml"; }
+.listingblock:hover code.yaml:before { content: "yaml"; }
+.listingblock.terminal pre .command:before { content: attr(data-prompt); padding-right: 0.5em; color: #999; }
+.listingblock.terminal pre .command:not([data-prompt]):before { content: '$'; }
+table.pyhltable { border: 0; margin-bottom: 0; }
+table.pyhltable td { vertical-align: top; padding-top: 0; padding-bottom: 0; }
+table.pyhltable td.code { padding-left: .75em; padding-right: 0; }
+.highlight.pygments .lineno, table.pyhltable td:not(.code) { color: #999; padding-left: 0; padding-right: .5em; border-right: 1px solid #dddddd; }
+.highlight.pygments .lineno { display: inline-block; margin-right: .25em; }
+table.pyhltable .linenodiv { background-color: transparent !important; padding-right: 0 !important; }
+.quoteblock { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
+.quoteblock blockquote { margin: 0 0 1.25em 0; padding: 0 0 0.5625em 0; border: 0; }
+.quoteblock blockquote > .paragraph:last-child p { margin-bottom: 0; }
+.quoteblock .attribution { margin-top: -.25em; padding-bottom: 0.5625em; font-size: inherit; color: #555555; }
+.quoteblock .attribution br { display: none; }
+.quoteblock .attribution cite { display: block; margin-bottom: 0.625em; }
+table thead th, table tfoot th { font-weight: bold; }
+table.tableblock.grid-all { border-collapse: separate; border-spacing: 1px; -webkit-border-radius: 4px; border-radius: 4px; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd; }
+table.tableblock.frame-topbot, table.tableblock.frame-none { border-left: 0; border-right: 0; }
+table.tableblock.frame-sides, table.tableblock.frame-none { border-top: 0; border-bottom: 0; }
+table.tableblock td .paragraph:last-child p, table.tableblock td > p:last-child { margin-bottom: 0; }
+th.tableblock.halign-left, td.tableblock.halign-left { text-align: left; }
+th.tableblock.halign-right, td.tableblock.halign-right { text-align: right; }
+th.tableblock.halign-center, td.tableblock.halign-center { text-align: center; }
+th.tableblock.valign-top, td.tableblock.valign-top { vertical-align: top; }
+th.tableblock.valign-bottom, td.tableblock.valign-bottom { vertical-align: bottom; }
+th.tableblock.valign-middle, td.tableblock.valign-middle { vertical-align: middle; }
+p.tableblock.header { color: #222222; font-weight: bold; }
+td > div.verse { white-space: pre; }
+ol { margin-left: 1.75em; }
+ul li ol { margin-left: 1.5em; }
+dl dd { margin-left: 1.125em; }
+dl dd:last-child, dl dd:last-child > :last-child { margin-bottom: 0; }
+ol > li p, ul > li p, ul dd, ol dd, .olist .olist, .ulist .ulist, .ulist .olist, .olist .ulist { margin-bottom: 0.625em; }
+ul.unstyled, ol.unnumbered, ul.checklist, ul.none { list-style-type: none; }
+ul.unstyled, ol.unnumbered, ul.checklist { margin-left: 0.625em; }
+ul.checklist li > p:first-child > i[class^="icon-check"]:first-child, ul.checklist li > p:first-child > input[type="checkbox"]:first-child { margin-right: 0.25em; }
+ul.checklist li > p:first-child > input[type="checkbox"]:first-child { position: relative; top: 1px; }
+ul.inline { margin: 0 auto 0.625em auto; margin-left: -1.375em; margin-right: 0; padding: 0; list-style: none; overflow: hidden; }
+ul.inline > li { list-style: none; float: left; margin-left: 1.375em; display: block; }
+ul.inline > li > * { display: block; }
+.unstyled dl dt { font-weight: normal; font-style: normal; }
+ol.arabic { list-style-type: decimal; }
+ol.decimal { list-style-type: decimal-leading-zero; }
+ol.loweralpha { list-style-type: lower-alpha; }
+ol.upperalpha { list-style-type: upper-alpha; }
+ol.lowerroman { list-style-type: lower-roman; }
+ol.upperroman { list-style-type: upper-roman; }
+ol.lowergreek { list-style-type: lower-greek; }
+.hdlist > table, .colist > table { border: 0; background: none; }
+.hdlist > table > tbody > tr, .colist > table > tbody > tr { background: none; }
+td.hdlist1 { padding-right: .8em; font-weight: bold; }
+td.hdlist1, td.hdlist2 { vertical-align: top; }
+.literalblock + .colist, .listingblock + .colist { margin-top: -0.5em; }
+.colist > table tr > td:first-of-type { padding: 0 .8em; line-height: 1; }
+.colist > table tr > td:last-of-type { padding: 0.25em 0; }
+.qanda > ol > li > p > em:only-child { color: #00467f; }
+.thumb, .th { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px #dddddd; box-shadow: 0 0 0 1px #dddddd; }
+.imageblock.left, .imageblock[style*="float: left"] { margin: 0.25em 0.625em 1.25em 0; }
+.imageblock.right, .imageblock[style*="float: right"] { margin: 0.25em 0 1.25em 0.625em; }
+.imageblock > .title { margin-bottom: 0; }
+.imageblock.thumb, .imageblock.th { border-width: 6px; }
+.imageblock.thumb > .title, .imageblock.th > .title { padding: 0 0.125em; }
+.image.left, .image.right { margin-top: 0.25em; margin-bottom: 0.25em; display: inline-block; line-height: 0; }
+.image.left { margin-right: 0.625em; }
+.image.right { margin-left: 0.625em; }
+a.image { text-decoration: none; }
+span.footnote, span.footnoteref { vertical-align: super; font-size: 0.875em; }
+span.footnote a, span.footnoteref a { text-decoration: none; }
+#footnotes { padding-top: 0.75em; padding-bottom: 0.75em; margin-bottom: 0.625em; }
+#footnotes hr { width: 20%; min-width: 6.25em; margin: -.25em 0 .75em 0; border-width: 1px 0 0 0; }
+#footnotes .footnote { padding: 0 0.375em; line-height: 1.3; font-size: 0.875em; margin-left: 1.2em; text-indent: -1.2em; margin-bottom: .2em; }
+#footnotes .footnote a:first-of-type { font-weight: bold; text-decoration: none; }
+#footnotes .footnote:last-of-type { margin-bottom: 0; }
+#content #footnotes { margin-top: -0.625em; margin-bottom: 0; padding: 0.75em 0; }
+.gist .file-data > table { border: none; background: #fff; width: 100%; margin-bottom: 0; }
+.gist .file-data > table td.line-data { width: 99%; }
+div.unbreakable { page-break-inside: avoid; }
+.big { font-size: larger; }
+.small { font-size: smaller; }
+.underline { text-decoration: underline; }
+.overline { text-decoration: overline; }
+.line-through { text-decoration: line-through; }
+.aqua { color: #00bfbf; }
+.aqua-background { background-color: #00fafa; }
+.black { color: black; }
+.black-background { background-color: black; }
+.blue { color: #0000bf; }
+.blue-background { background-color: #0000fa; }
+.fuchsia { color: #bf00bf; }
+.fuchsia-background { background-color: #fa00fa; }
+.gray { color: #606060; }
+.gray-background { background-color: #7d7d7d; }
+.green { color: #006000; }
+.green-background { background-color: #007d00; }
+.lime { color: #00bf00; }
+.lime-background { background-color: #00fa00; }
+.maroon { color: #600000; }
+.maroon-background { background-color: #7d0000; }
+.navy { color: #000060; }
+.navy-background { background-color: #00007d; }
+.olive { color: #606000; }
+.olive-background { background-color: #7d7d00; }
+.purple { color: #600060; }
+.purple-background { background-color: #7d007d; }
+.red { color: #bf0000; }
+.red-background { background-color: #fa0000; }
+.silver { color: #909090; }
+.silver-background { background-color: #bcbcbc; }
+.teal { color: #006060; }
+.teal-background { background-color: #007d7d; }
+.white { color: #bfbfbf; }
+.white-background { background-color: #fafafa; }
+.yellow { color: #bfbf00; }
+.yellow-background { background-color: #fafa00; }
+span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
+.admonitionblock td.icon [class^="icon-"]:before { font-size: 2.5em; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); cursor: default; }
+.admonitionblock td.icon .icon-note:before { content: "\f05a"; color: #005498; color: #003f72; }
+.admonitionblock td.icon .icon-tip:before { content: "\f0eb"; text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8); color: #111; }
+.admonitionblock td.icon .icon-warning:before { content: "\f071"; color: #bf6900; }
+.admonitionblock td.icon .icon-caution:before { content: "\f06d"; color: #bf3400; }
+.admonitionblock td.icon .icon-important:before { content: "\f06a"; color: #bf0000; }
+.conum { display: inline-block; color: white !important; background-color: #222222; -webkit-border-radius: 100px; border-radius: 100px; text-align: center; width: 20px; height: 20px; font-size: 12px; font-weight: bold; line-height: 20px; font-family: Arial, sans-serif; font-style: normal; position: relative; top: -2px; letter-spacing: -1px; }
+.conum * { color: white !important; }
+.conum + b { display: none; }
+.conum:after { content: attr(data-value); }
+.conum:not([data-value]):empty { display: none; }
+.literalblock > .content > pre, .listingblock > .content > pre { -webkit-border-radius: 0; border-radius: 0; }
+
+</style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', prettyPrint)</script>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Traits</h1>
+<span id="revnumber">version 2.4.0-SNAPSHOT</span>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_methods">Methods</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_public_methods">Public methods</a></li>
+<li><a href="#_abstract_methods">Abstract methods</a></li>
+<li><a href="#_private_methods">Private methods</a></li>
+</ul>
+</li>
+<li><a href="#_the_meaning_of_this">The meaning of this</a></li>
+<li><a href="#_interfaces">Interfaces</a></li>
+<li><a href="#_properties">Properties</a></li>
+<li><a href="#_fields">Fields</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_private_fields">Private fields</a></li>
+<li><a href="#_public_fields">Public fields</a></li>
+</ul>
+</li>
+<li><a href="#_composition_of_behaviors">Composition of behaviors</a></li>
+<li><a href="#_overriding_default_methods">Overriding default methods</a></li>
+<li><a href="#_extending_traits">Extending traits</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_simple_inheritance">Simple inheritance</a></li>
+<li><a href="#_multiple_inheritance">Multiple inheritance</a></li>
+</ul>
+</li>
+<li><a href="#_duck_typing_and_traits">Duck typing and traits</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_dynamic_code">Dynamic code</a></li>
+<li><a href="#_dynamic_methods_in_a_trait">Dynamic methods in a trait</a></li>
+</ul>
+</li>
+<li><a href="#_multiple_inheritance_conflicts">Multiple inheritance conflicts</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_default_conflict_resolution">Default conflict resolution</a></li>
+<li><a href="#_user_conflict_resolution">User conflict resolution</a></li>
+</ul>
+</li>
+<li><a href="#_runtime_implementation_of_traits">Runtime implementation of traits</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_implementing_a_trait_at_runtime">Implementing a trait at runtime</a></li>
+<li><a href="#_implementing_multiple_traits_at_once">Implementing multiple traits at once</a></li>
+</ul>
+</li>
+<li><a href="#_chaining_behavior">Chaining behavior</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_semantics_of_super_inside_a_trait">Semantics of super inside a trait</a></li>
+</ul>
+</li>
+<li><a href="#_advanced_features">Advanced features</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_sam_type_coercion">SAM type coercion</a></li>
+<li><a href="#_differences_with_java_8_default_methods">Differences with Java 8 default methods</a></li>
+</ul>
+</li>
+<li><a href="#_differences_with_mixins">Differences with mixins</a></li>
+<li><a href="#_static_methods_properties_and_fields">Static methods, properties and fields</a></li>
+<li><a href="#_inheritance_of_state_gotchas">Inheritance of state gotchas</a></li>
+<li><a href="#_limitations">Limitations</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_compatibility_with_ast_transformations">Compatibility with AST transformations</a></li>
+<li><a href="#_prefix_and_postfix_operations">Prefix and postfix operations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traits are a a structural construct of the language which allow:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>composition of behaviors</p>
+</li>
+<li>
+<p>runtime implementation of interfaces</p>
+</li>
+<li>
+<p>behavior overriding</p>
+</li>
+<li>
+<p>compatibility with static type checking/compilation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>They can be seen as <strong>interfaces</strong> carrying both <strong>default implementations</strong> and <strong>state</strong>. A trait is defined using the
+<code>trait</code> keyword:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait FlyingAbility {                           <i class="conum" data-value="1"></i><b>(1)</b>
+        String fly() { "I'm flying!" }          <i class="conum" data-value="2"></i><b>(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>declaration of a trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>declaration of a method inside a trait</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then it can be used like a normal interface using the <code>implements</code> keyword:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Bird implements FlyingAbility {}          <i class="conum" data-value="1"></i><b>(1)</b>
+def b = new Bird()                              <i class="conum" data-value="2"></i><b>(2)</b>
+assert b.fly() == "I'm flying!"                 <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Adds the trait <code>FlyingAbility</code> to the <code>Bird</code> class capabilities</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>instantiate a new <code>Bird</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the <code>Bird</code> class automatically gets the behavior of the <code>FlyingAbility</code> trait</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Traits allow a wide range of capabilities, from simple composition to testing, which are described throughfully in this section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_methods">Methods</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_public_methods">Public methods</h3>
+<div class="paragraph">
+<p>Declaring a method in a trait can be done like any regular method in a class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait FlyingAbility {                           <i class="conum" data-value="1"></i><b>(1)</b>
+        String fly() { "I'm flying!" }          <i class="conum" data-value="2"></i><b>(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>declaration of a trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>declaration of a method inside a trait</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_abstract_methods">Abstract methods</h3>
+<div class="paragraph">
+<p>In addition, traits may declare <em>abstract</em> methods too, which therefore need to be implemented in the class implementing the trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Greetable {
+    abstract String name()                              <i class="conum" data-value="1"></i><b>(1)</b>
+    String greeting() { "Hello, ${name()}!" }           <i class="conum" data-value="2"></i><b>(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>implementing class will have to declare the <code>name</code> method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>can be mixed with a concrete method</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then the trait can be used like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Person implements Greetable {                     <i class="conum" data-value="1"></i><b>(1)</b>
+    String name() { 'Bob' }                             <i class="conum" data-value="2"></i><b>(2)</b>
+}
+
+def p = new Person()
+assert p.greeting() == 'Hello, Bob!'                    <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>implement the trait <code>Greetable</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>since <code>name</code> was abstract, it is required to implement it</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>then <code>greeting</code> can be called</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_private_methods">Private methods</h3>
+<div class="paragraph">
+<p>Traits may also define private methods. Those methods will not appear in the trait contract interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Greeter {
+    private String greetingMessage() {                      <i class="conum" data-value="1"></i><b>(1)</b>
+        'Hello from a private method!'
+    }
+    String greet() {
+        def m = greetingMessage()                           <i class="conum" data-value="2"></i><b>(2)</b>
+        println m
+        m
+    }
+}
+class GreetingMachine implements Greeter {}                 <i class="conum" data-value="3"></i><b>(3)</b>
+def g = new GreetingMachine()
+assert g.greet() == "Hello from a private method!"          <i class="conum" data-value="4"></i><b>(4)</b>
+try {
+    assert g.greetingMessage()                              <i class="conum" data-value="5"></i><b>(5)</b>
+} catch (MissingMethodException e) {
+    println "greetingMessage is private in trait"
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>define a private method <code>greetingMessage</code> in the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the public <code>greet</code> message calls <code>greetingMessage</code> by default</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>create a class implementing the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>greet</code> can be called</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>but not <code>greetingMessage</code></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Traits only support <code>public</code> and <code>private</code> methods. Neither <code>protected</code> nor <code>package private</code> scopes are
+supported.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_meaning_of_this">The meaning of this</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>this</code> represents the implementing instance. Think of a trait as a superclass. This means that when you write:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Introspector {
+    def whoAmI() { this }
+}
+class Foo implements Introspector {}
+def foo = new Foo()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then calling:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>foo.whoAmI()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will return the same instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>assert foo.whoAmI().is(foo)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interfaces">Interfaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traits may implement interfaces, in which case the interfaces are declared using the <code>implements</code> keyword:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>interface Named {                                       <i class="conum" data-value="1"></i><b>(1)</b>
+    String name()
+}
+trait Greetable implements Named {                      <i class="conum" data-value="2"></i><b>(2)</b>
+    String greeting() { "Hello, ${name()}!" }
+}
+class Person implements Greetable {                     <i class="conum" data-value="3"></i><b>(3)</b>
+    String name() { 'Bob' }                             <i class="conum" data-value="4"></i><b>(4)</b>
+}
+
+def p = new Person()
+assert p.greeting() == 'Hello, Bob!'                    <i class="conum" data-value="5"></i><b>(5)</b>
+assert p instanceof Named                               <i class="conum" data-value="6"></i><b>(6)</b>
+assert p instanceof Greetable                           <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>declaration of a normal interface</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>add <code>Named</code> to the list of implemented interfaces</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>declare a class that implements the <code>Greetable</code> trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>implement the missing <code>greet</code> method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>the <code>greeting</code> implementation comes from the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>make sure <code>Person</code> implements the <code>Named</code> interface</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>make sure <code>Person</code> implements the <code>Greetable</code> trait</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_properties">Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A trait may define properties, like in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Named {
+    String name                             <i class="conum" data-value="1"></i><b>(1)</b>
+}
+class Person implements Named {}            <i class="conum" data-value="2"></i><b>(2)</b>
+def p = new Person(name: 'Bob')             <i class="conum" data-value="3"></i><b>(3)</b>
+assert p.name == 'Bob'                      <i class="conum" data-value="4"></i><b>(4)</b>
+assert p.getName() == 'Bob'                 <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>declare a property <code>name</code> inside a trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>declare a class which implements the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the property is automatically made visible</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>it can be accessed using the regular property accessor</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>or using the regular getter syntax</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fields">Fields</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_private_fields">Private fields</h3>
+<div class="paragraph">
+<p>Since traits allow the use of private methods, it can also be interesting to use private fields to store state. Traits
+will let you do that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Counter {
+    private int count = 0                   <i class="conum" data-value="1"></i><b>(1)</b>
+    int count() { count += 1; count }       <i class="conum" data-value="2"></i><b>(2)</b>
+}
+class Foo implements Counter {}             <i class="conum" data-value="3"></i><b>(3)</b>
+def f = new Foo()
+assert f.count() == 1                       <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is a major difference with <a href="http://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html">Java 8 virtual extension methods</a>. While virtual extension methods
+do not carry state, traits can. Also interesting traits in Groovy are supported starting with Java 6, but their implementation do not rely on virtual extension methods. This
+means that even if a trait can be seen from a Java class as a regular interface, this interface will <strong>not</strong> have default methods, only abstract ones.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_public_fields">Public fields</h3>
+<div class="paragraph">
+<p>Public fields work the same way as private fields, but in order to avoid the <a href="http://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">diamond problem</a>,
+field names are remapped in the implementing class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Named {
+    public String name                      <i class="conum" data-value="1"></i><b>(1)</b>
+}
+class Person implements Named {}            <i class="conum" data-value="2"></i><b>(2)</b>
+def p = new Person()                        <i class="conum" data-value="3"></i><b>(3)</b>
+p.Named__name = 'Bob'                       <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>declare a public <strong>field</strong> inside the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>declare a class implementing the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>create an instance of that class</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>the public field is available, but renamed</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The name of the field depends on the fully qualified name of the trait. All dots (<code>.</code>) in package are replaced with an underscore (<code>_</code>), and the final name includes a double underscore.
+So if the type of the field is <code>String</code>, the name of the package is <code>my.package</code>, the name of the trait is <code>Foo</code> and the name of the field is <code>bar</code>,
+in the implementing class, the public field will appear as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>String my_package_Foo__bar</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+While traits support public fields, it is not recommanded to use them and considered as a bad practice.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_composition_of_behaviors">Composition of behaviors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traits can be used to implement multiple inheritance in a controlled way, avoiding the diamond issue. For example, we
+can have the following traits:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait FlyingAbility {                           <i class="conum" data-value="1"></i><b>(1)</b>
+        String fly() { "I'm flying!" }          <i class="conum" data-value="2"></i><b>(2)</b>
+}
+trait SpeakingAbility {
+    String speak() { "I'm speaking!" }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And a class implementing both traits:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Duck implements FlyingAbility, SpeakingAbility {} <i class="conum" data-value="1"></i><b>(1)</b>
+
+def d = new Duck()                                      <i class="conum" data-value="2"></i><b>(2)</b>
+assert d.fly() == "I'm flying!"                         <i class="conum" data-value="3"></i><b>(3)</b>
+assert d.speak() == "I'm speaking!"                     <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the <code>Duck</code> class implements both <code>FlyingAbility</code> and <code>SpeakingAbility</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>creates a new instance of <code>Duck</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>we can call the method <code>fly</code> from <code>FlyingAbility</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>but also the method <code>speak</code> from <code>SpeakingAbility</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Traits encourage the reuse of capabilities among objects, and the creation of new classes by the composition of existing behavior.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overriding_default_methods">Overriding default methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traits provide default implementations for methods, but it is possible to override them in the implementing class. For example, we
+can slightly change the example above, by having a duck which quacks:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Duck implements FlyingAbility, SpeakingAbility {
+    String quack() { "Quack!" }                         <i class="conum" data-value="1"></i><b>(1)</b>
+    String speak() { quack() }                          <i class="conum" data-value="2"></i><b>(2)</b>
+}
+
+def d = new Duck()
+assert d.fly() == "I'm flying!"                         <i class="conum" data-value="3"></i><b>(3)</b>
+assert d.quack() == "Quack!"                            <i class="conum" data-value="4"></i><b>(4)</b>
+assert d.speak() == "Quack!"                            <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>define a method specific to <code>Duck</code>, named <code>quack</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>override the default implementation of <code>speak</code> so that we use <code>quack</code> instead</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the duck is still flying, from the default implementation</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>quack</code> comes from the <code>Duck</code> class</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>speak</code> no longer uses the default implementation from <code>SpeakingAbility</code></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extending_traits">Extending traits</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_simple_inheritance">Simple inheritance</h3>
+<div class="paragraph">
+<p>Traits may extend another trait, in which case you must use the <code>extends</code> keyword:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Named {
+    String name                                     <i class="conum" data-value="1"></i><b>(1)</b>
+}
+trait Polite extends Named {                        <i class="conum" data-value="2"></i><b>(2)</b>
+    String introduce() { "Hello, I am $name" }      <i class="conum" data-value="3"></i><b>(3)</b>
+}
+class Person implements Polite {}
+def p = new Person(name: 'Alice')                   <i class="conum" data-value="4"></i><b>(4)</b>
+assert p.introduce() == 'Hello, I am Alice'         <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the <code>Named</code> trait defines a single <code>name</code> property</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the <code>Polite</code> trait <strong>extends</strong> the <code>Named</code> trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>Polite</code> adds a new method which has access to the <code>name</code> property of the super-trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>the <code>name</code> property is visible from the <code>Person</code> class implementing <code>Polite</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>as is the <code>introduce</code> method</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_multiple_inheritance">Multiple inheritance</h3>
+<div class="paragraph">
+<p>Alternatively, a trait may extend multiple traits. In that case, all super traits must be declared in the <code>implements</code>
+clause:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait WithId {                                      <i class="conum" data-value="1"></i><b>(1)</b>
+    Long id
+}
+trait WithName {                                    <i class="conum" data-value="2"></i><b>(2)</b>
+    String name
+}
+trait Identified implements WithId, WithName {}     <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>WithId</code> trait defines the <code>id</code> property</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>WithName</code> trait defines the <code>name</code> property</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>Identified</code> is a trait which inherits both <code>WithId</code> and <code>WithName</code></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_duck_typing_and_traits">Duck typing and traits</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_dynamic_code">Dynamic code</h3>
+<div class="paragraph">
+<p>Traits can call any dynamic code, like a normal Groovy class. This means that you can, in the body of a method, call
+methods which are supposed to exist in an implementing class, without having to explicitly declare them in an interface.
+This means that traits are fully compatible with duck typing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait SpeakingDuck {
+    String speak() { quack() }                      <i class="conum" data-value="1"></i><b>(1)</b>
+}
+class Duck implements SpeakingDuck {
+    String methodMissing(String name, args) {
+        "${name.capitalize()}!"                     <i class="conum" data-value="2"></i><b>(2)</b>
+    }
+}
+def d = new Duck()
+assert d.speak() == 'Quack!'                        <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the <code>SpeakingDuck</code> expects the <code>quack</code> method to be defined</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the <code>Duck</code> class does implement the method using <em>methodMissing</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>calling the <code>speak</code> method triggers a call to <code>quack</code> which is handled by <code>methodMissing</code></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dynamic_methods_in_a_trait">Dynamic methods in a trait</h3>
+<div class="paragraph">
+<p>It is also possible for a trait to implement MOP methods like <code>methodMissing</code> or <code>propertyMissing</code>, in which case implementing classes
+will inherit the behavior from the trait, like in this example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait DynamicObject {                               <i class="conum" data-value="1"></i><b>(1)</b>
+    private Map props = [:]
+    def methodMissing(String name, args) {
+        name.toUpperCase()
+    }
+    def propertyMissing(String prop) {
+        props['prop']
+    }
+    void setProperty(String prop, Object value) {
+        props['prop'] = value
+    }
+}
+
+class Dynamic implements DynamicObject {
+    String existingProperty = 'ok'                  <i class="conum" data-value="2"></i><b>(2)</b>
+    String existingMethod() { 'ok' }                <i class="conum" data-value="3"></i><b>(3)</b>
+}
+def d = new Dynamic()
+assert d.existingProperty == 'ok'                   <i class="conum" data-value="4"></i><b>(4)</b>
+assert d.foo == null                                <i class="conum" data-value="5"></i><b>(5)</b>
+d.foo = 'bar'                                       <i class="conum" data-value="6"></i><b>(6)</b>
+assert d.foo == 'bar'                               <i class="conum" data-value="7"></i><b>(7)</b>
+assert d.existingMethod() == 'ok'                   <i class="conum" data-value="8"></i><b>(8)</b>
+assert d.someMethod() == 'SOMEMETHOD'               <i class="conum" data-value="9"></i><b>(9)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>create a trait implementing several MOP methods</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the <code>Dynamic</code> class defines a property</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the <code>Dynamic</code> class defines a method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>calling an existing property will call the method from <code>Dynamic</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>calling an non-existing property will call the method from the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>will call <code>setProperty</code> defined on the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>will call <code>getProperty</code> defined on the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>calling an existing method on <code>Dynamic</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>but calling a non existing method thanks to the trait <code>methodMissing</code></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multiple_inheritance_conflicts">Multiple inheritance conflicts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_default_conflict_resolution">Default conflict resolution</h3>
+<div class="paragraph">
+<p>It is possible for a class to implement multiple traits. If some trait defines a method with the same signature as a
+method in another trait, we have a conflict:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait A {
+    String exec() { 'A' }               <i class="conum" data-value="1"></i><b>(1)</b>
+}
+trait B {
+    String exec() { 'B' }               <i class="conum" data-value="2"></i><b>(2)</b>
+}
+class C implements A,B {}               <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>trait <code>A</code> defines a method named <code>exec</code> returning a <code>String</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>trait <code>B</code> defines the very same method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>class <code>C</code> implements both traits</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In this case, the default behavior is that methods from the <strong>last declared trait</strong> wins. Here, <code>B</code> is declared after <code>A</code>
+so the method from <code>B</code> will be picked up:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>def c = new C()
+assert c.exec() == 'B'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_conflict_resolution">User conflict resolution</h3>
+<div class="paragraph">
+<p>In case this behavior is not the one you want, you can explicitly choose which method to call using the <code>Trait.super.foo</code> syntax.
+In the example above, we can force to choose the method from trait A, by writing this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class C implements A,B {
+    String exec() { A.super.exec() }    <i class="conum" data-value="1"></i><b>(1)</b>
+}
+def c = new C()
+assert c.exec() == 'A'                  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>explicit call of <code>exec</code> from the trait <code>A</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>calls the version from <code>A</code> instead of using the default resolution, which would be the one from <code>B</code></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_runtime_implementation_of_traits">Runtime implementation of traits</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_implementing_a_trait_at_runtime">Implementing a trait at runtime</h3>
+<div class="paragraph">
+<p>Groovy also supports implementing traits dynamically at runtime. It allows you to "decorate" an existing object using a
+trait. As an example, let&#8217;s start with this trait and the following class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Extra {
+    String extra() { "I'm an extra method" }            <i class="conum" data-value="1"></i><b>(1)</b>
+}
+class Something {                                       <i class="conum" data-value="2"></i><b>(2)</b>
+    String doSomething() { 'Something' }                <i class="conum" data-value="3"></i><b>(3)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the <code>Extra</code> trait defines an <code>extra</code> method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>the <code>Something</code> class does <strong>not</strong> implement the <code>Extra</code> trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>Something</code> only defines a method <code>doSomething</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then if we do:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>def s = new Something()
+s.extra()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>the call to extra would fail because <code>Something</code> is not implementing <code>Extra</code>. It is possible to do it at runtime with
+the following syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>def s = new Something() as Extra                        <i class="conum" data-value="1"></i><b>(1)</b>
+s.extra()                                               <i class="conum" data-value="2"></i><b>(2)</b>
+s.doSomething()                                         <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>use of the <strong>as</strong> keyword to coerce an object to a trait <strong>at runtime</strong></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>then <code>extra</code> can be called on the object</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>and <code>doSomething</code> is still callable</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-important" title="Important"></i>
+</td>
+<td class="content">
+When coercing an object to a trait, the result of the operation is not the same instance. It is guaranteed
+that the coerced object will implement both the trait <strong>and</strong> the interfaces that the original object implements, but
+the result will <strong>not</strong> be an instance of the original class.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implementing_multiple_traits_at_once">Implementing multiple traits at once</h3>
+<div class="paragraph">
+<p>Should you need to implement several traits at once, you can use the <code>withTraits</code> method instead of the <code>as</code> keyword:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait A { void methodFromA() {} }
+trait B { void methodFromB() {} }
+
+class C {}
+
+def c = new C()
+c.methodFromA()                     <i class="conum" data-value="1"></i><b>(1)</b>
+c.methodFromB()                     <i class="conum" data-value="2"></i><b>(2)</b>
+def d = c.withTraits A, B           <i class="conum" data-value="3"></i><b>(3)</b>
+d.methodFromA()                     <i class="conum" data-value="4"></i><b>(4)</b>
+d.methodFromB()                     <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>call to <code>methodFromA</code> will fail because <code>C</code> doesn&#8217;t implement <code>A</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>call to <code>methodFromB</code> will fail because <code>C</code> doesn&#8217;t implement <code>B</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>withTrait</code> will wrap <code>c</code> into something which implements <code>A</code> and <code>B</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>methodFromA</code> will now pass because <code>d</code> implements <code>A</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>methodFromB</code> will now pass because <code>d</code> also implements <code>B</code></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-important" title="Important"></i>
+</td>
+<td class="content">
+When coercing an object to multiple traits, the result of the operation is not the same instance. It is guaranteed
+that the coerced object will implement both the traits <strong>and</strong> the interfaces that the original object implements, but
+the result will <strong>not</strong> be an instance of the original class.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chaining_behavior">Chaining behavior</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Groovy supports the concept of <em>stackable traits</em>. The idea is to delegate from one trait to the other if the current trait
+is not capable of handling a message. To illustrate this, let&#8217;s imagine a message handler interface like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>interface MessageHandler {
+    void on(String message, Map payload)
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then you can compose a message handler by applying small behaviors. For example, let&#8217;s define a default handler in the
+form of a trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait DefaultHandler implements MessageHandler {
+    void on(String message, Map payload) {
+        println "Received $message with payload $payload"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then any class can inherit the behavior of the default handler by implementing the trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class SimpleHandler implements DefaultHandler {}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now what if you want to log all messages, in addition to the default handler? One option is to write this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class SimpleHandlerWithLogging implements DefaultHandler {
+    void on(String message, Map payload) {                                  <i class="conum" data-value="1"></i><b>(1)</b>
+        println "Seeing $message with payload $payload"                     <i class="conum" data-value="2"></i><b>(2)</b>
+        DefaultHandler.super.on(message, payload)                           <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>explicitly implement the <code>on</code> method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>perform logging</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>continue by delegating to the <code>DefaultHandler</code> trait</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This works but this approach has drawbacks:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the logging logic is bound to a "concrete" handler</p>
+</li>
+<li>
+<p>we have an explicit reference to <code>DefaultHandler</code> in the <code>on</code> method, meaning that if we happen to change the trait that our class implements, code will be broken</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>As an alternative, we can write another trait which responsability is limited to logging:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait LoggingHandler implements MessageHandler {                            <i class="conum" data-value="1"></i><b>(1)</b>
+    void on(String message, Map payload) {
+        println "Seeing $message with payload $payload"                     <i class="conum" data-value="2"></i><b>(2)</b>
+        super.on(message, payload)                                          <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the logging handler is itself a handler</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>prints the message it receives</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>then <code>super</code> makes it delegate the call to the next trait in the chain</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then our class can be rewritten as this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class HandlerWithLogger implements DefaultHandler, LoggingHandler {}
+def loggingHandler = new HandlerWithLogger()
+loggingHandler.on('test logging', [:])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>which will print:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Seeing test logging with payload [:]
+Received test logging with payload [:]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As the priority rules imply that <code>LoggerHandler</code> wins because it is declared last, then a call to <code>on</code> will use
+the implementation from <code>LoggingHandler</code>. But the latter has a call to <code>super</code>, which means the next trait in the
+chain. Here, the next trait is <code>DefaultHandler</code> so <strong>both</strong> will be called:</p>
+</div>
+<div class="paragraph">
+<p>The interest of this approach becomes more evident if we add a third handler, which is responsible for handling messages
+that start with <code>say</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait SayHandler implements MessageHandler {
+    void on(String message, Map payload) {
+        if (message.startsWith("say")) {                                    <i class="conum" data-value="1"></i><b>(1)</b>
+            println "I say ${message - 'say'}!"
+        } else {
+            super.on(message, payload)                                      <i class="conum" data-value="2"></i><b>(2)</b>
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>a handler specific precondition</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>if the precondition is not meant, pass the message to the next handler in the chain</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then our final handler looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Handler implements DefaultHandler, SayHandler, LoggingHandler {}
+def h = new Handler()
+h.on('foo', [:])
+h.on('sayHello', [:])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which means:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>messages will first go through the logging handler</p>
+</li>
+<li>
+<p>the logging handler calls <code>super</code> which will delegate to the next handler, which is the <code>SayHandler</code></p>
+</li>
+<li>
+<p>if the message starts with <code>say</code>, then the hanlder consumes the message</p>
+</li>
+<li>
+<p>if not, the <code>say</code> handler delegates to the next handler in the chain</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This approach is very powerful because it allows you to write handlers that do not know each other and yet let you
+combine them in the order you want. For example, if we execute the code, it will print:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Seeing foo with payload [:]
+Received foo with payload [:]
+Seeing sayHello with payload [:]
+I say Hello!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>but if we move the logging handler to be the second one in the chain, the output is different:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class AlternateHandler implements DefaultHandler, LoggingHandler, SayHandler {}
+h = new AlternateHandler()
+h.on('foo', [:])
+h.on('sayHello', [:])</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>prints:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Seeing foo with payload [:]
+Received foo with payload [:]
+I say Hello!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The reason is that now, since the <code>SayHandler</code> consumes the message without calling <code>super</code>, the logging handler is
+not called anymore.</p>
+</div>
+<div class="sect2">
+<h3 id="_semantics_of_super_inside_a_trait">Semantics of super inside a trait</h3>
+<div class="paragraph">
+<p>If a class implements multiple traits and that a call to an unqualified <code>super</code> is found, then:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>if the class implements another trait, the call delegates to the next trait in the chain</p>
+</li>
+<li>
+<p>if there isn&#8217;t any trait left in the chain, <code>super</code> refers to the super class of the implementing class (<em>this</em>)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For example, it is possible to decorate final classes thanks to this behavior:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Filtering {                                       <i class="conum" data-value="1"></i><b>(1)</b>
+    StringBuilder append(String str) {                  <i class="conum" data-value="2"></i><b>(2)</b>
+        def subst = str.replace('o','')                 <i class="conum" data-value="3"></i><b>(3)</b>
+        super.append(subst)                             <i class="conum" data-value="4"></i><b>(4)</b>
+    }
+    String toString() { super.toString() }              <i class="conum" data-value="5"></i><b>(5)</b>
+}
+def sb = new StringBuilder().withTraits Filtering       <i class="conum" data-value="6"></i><b>(6)</b>
+sb.append('Groovy')
+assert sb.toString() == 'Grvy'                          <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>define a trait named <code>Filtering</code>, supposed to be applied on a <code>StringBuilder</code> at runtime</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>redefine the <code>append</code> method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>remove all 'o&#8217;s from the string</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>then delegate to <code>super</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>in case <code>toString</code> is called, delegate to <code>super.toString</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>runtime implementation of the <code>Filtering</code> trait on a <code>StringBuilder</code> instance</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>the string which has been appended no longer contains the letter <code>o</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In this example, when <code>super.append</code> is encountered, there is no other trait implemented by the target object, so the
+method which is called is the original <code>append</code> method, that is to say the one from <code>StringBuilder</code>. The same trick
+is used for <code>toString</code>, so that the string representation of the proxy object which is generated delegates to the
+<code>toString</code> of the <code>StringBuilder</code> instance.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_features">Advanced features</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sam_type_coercion">SAM type coercion</h3>
+<div class="paragraph">
+<p>If a trait defines a single abstract method, it is candidate for SAM type coercion. For example, imagine the following
+trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Greeter {
+    String greet() { "Hello $name" }        <i class="conum" data-value="1"></i><b>(1)</b>
+    abstract String getName()               <i class="conum" data-value="2"></i><b>(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the <code>greet</code> method is not abstract and calls the abstract method <code>getName</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>getName</code> is an abstract method</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Since <code>getName</code> is the <em>single abstract method</em> in the <code>Greeter</code> trait, you can write:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>Greeter greeter = { 'Alice' }               <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the closure "becomes" the implementation of the <code>getName</code> single abstract method</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>or even:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>void greet(Greeter g) { println g.greet() } <i class="conum" data-value="1"></i><b>(1)</b>
+greet { 'Alice' }                           <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the greet method accepts the SAM type Greeter as parameter</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>we can call it directly with a closure</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_differences_with_java_8_default_methods">Differences with Java 8 default methods</h3>
+<div class="paragraph">
+<p>In Java 8, interfaces can have default implementations of methods. If a class implements an interface and does not provide
+an implementation for a default method, then the implementation from the interface is chosen. Traits behave the same but
+with a major difference: the implementation from the trait is <strong>always</strong> used if the class declares the trait in its interface
+list <strong>and</strong> that it doesn&#8217;t provide an implementation.</p>
+</div>
+<div class="paragraph">
+<p>This feature can be used to compose behaviors in an very precise way, in case you want to override the behavior of an
+already implemented method.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate the concept, let&#8217;s start with this simple example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>import groovy.transform.CompileStatic
+import org.codehaus.groovy.control.CompilerConfiguration
+import org.codehaus.groovy.control.customizers.ASTTransformationCustomizer
+import org.codehaus.groovy.control.customizers.ImportCustomizer
+
+class SomeTest extends GroovyTestCase {
+    def config
+    def shell
+
+    void setup() {
+        config = new CompilerConfiguration()
+        shell = new GroovyShell(config)
+    }
+    void testSomething() {
+        assert shell.evaluate('1+1') == 2
+    }
+    void otherTest() { /* ... */ }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we create a simple test case which uses two properties (<em>config</em> and <em>shell</em>) and uses those in
+multiple test methods. Now imagine that you want to test the same, but with another distinct compiler configuration.
+One option is to create a subclass of <code>SomeTest</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class AnotherTest extends SomeTest {
+    void setup() {
+        config = new CompilerConfiguration()
+        config.addCompilationCustomizers( ... )
+        shell = new GroovyShell(config)
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It works, but what if you have actually multiple test classes, and that you want to test the new configuration for all
+those test classes? Then you would have to create a distinct subclass for each test class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class YetAnotherTest extends SomeTest {
+    void setup() {
+        config = new CompilerConfiguration()
+        config.addCompilationCustomizers( ... )
+        shell = new GroovyShell(config)
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then what you see is that the <code>setup</code> method of both tests is the same. The idea, then, is to create a trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait MyTestSupport {
+    void setup() {
+        config = new CompilerConfiguration()
+        config.addCompilationCustomizers( new ASTTransformationCustomizer(CompileStatic) )
+        shell = new GroovyShell(config)
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then use it in the subclasses:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class AnotherTest extends SomeTest implements MyTestSupport {}
+class YetAnotherTest extends SomeTest2 implements MyTestSupport {}
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It would allow us to dramatically reduce the boilerplate code, and reduces the risk of forgetting to change the setup
+code in case we decide to change it. Even if <code>setup</code> is already implemented in the super class, since the test class declares
+the trait in its interface list, the behavior will be borrowed from the trait implementation!</p>
+</div>
+<div class="paragraph">
+<p>This feature is in particular useful when you don&#8217;t have access to the super class source code. It can be used to
+mock methods or force a particular implementation of a method in a subclass. It lets you refactor your code to keep
+the overriden logic in a single trait and inherit a new behavior just by implementing it. The alternative, of course,
+is to override the method in <strong>every</strong> place you would have used the new code.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-important" title="Important"></i>
+</td>
+<td class="content">
+It&#8217;s worth noting that if you use runtime traits, the methods from the trait are <strong>always</strong> preferred to those of the proxied
+object:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Person {
+    String name                                         <i class="conum" data-value="1"></i><b>(1)</b>
+}
+trait Bob {
+    String getName() { 'Bob' }                          <i class="conum" data-value="2"></i><b>(2)</b>
+}
+
+def p = new Person(name: 'Alice')
+assert p.name == 'Alice'                                <i class="conum" data-value="3"></i><b>(3)</b>
+def p2 = p as Bob                                       <i class="conum" data-value="4"></i><b>(4)</b>
+assert p2.name == 'Bob'                                 <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the <code>Person</code> class defines a <code>name</code> property which results in a <code>getName</code> method</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>Bob</code> is a trait which defines <code>getName</code> as returning <code>Bob</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the default object will return <em>Alice</em></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>p2</code> coerces <code>p</code> into <code>Bob</code> at runtime</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>getName</code> returns <em>Bob</em> because <code>getName</code> is taken from the <strong>trait</strong></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-important" title="Important"></i>
+</td>
+<td class="content">
+Again, don&#8217;t forget that dynamic trait coercion returns a distinct object which only implements the original
+interfaces, as well as the traits.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_differences_with_mixins">Differences with mixins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are several conceptual differences with mixins, as they are available in Groovy. Note that we are talking about
+runtime mixins, not the @Mixin annotation which is deprecated in favour of traits.</p>
+</div>
+<div class="paragraph">
+<p>First of all, methods defined in a trait are visible in bytecode:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>internally, the trait is represented as an interface (without default methods) and several helper classes</p>
+</li>
+<li>
+<p>this means that an object implementing a trait effectively implements an <em>interface</em></p>
+</li>
+<li>
+<p>those methods are visible from Java</p>
+</li>
+<li>
+<p>they are compatible with type checking and static compilation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Methods added through a mixin are, on the contrary, only visible at runtime:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class A { String methodFromA() { 'A' } }        <i class="conum" data-value="1"></i><b>(1)</b>
+class B { String methodFromB() { 'B' } }        <i class="conum" data-value="2"></i><b>(2)</b>
+A.metaClass.mixin B                             <i class="conum" data-value="3"></i><b>(3)</b>
+def o = new A()
+assert o.methodFromA() == 'A'                   <i class="conum" data-value="4"></i><b>(4)</b>
+assert o.methodFromB() == 'B'                   <i class="conum" data-value="5"></i><b>(5)</b>
+assert o instanceof A                           <i class="conum" data-value="6"></i><b>(6)</b>
+assert !(o instanceof B)                        <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>class <code>A</code> defines <code>methodFromA</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>class <code>B</code> defines <code>methodFromB</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>mixin B into A</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>we can call <code>methodFromA</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>we can also call <code>methodFromB</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>the object is an instance of <code>A</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>but it&#8217;s <strong>not</strong> an instanceof <code>B</code></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The last point is actually a very important and illustrates a place where mixins have an advantage over traits: the instances
+are <strong>not</strong> modified, so if you mixin some class into another, there isn&#8217;t a third class generated, and methods which respond to
+A will continue responding to A even if mixed in.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_static_methods_properties_and_fields">Static methods, properties and fields</h2>
+<div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The following instructions are subject to caution. Static member support is work in progress and still experimental. The
+information below is valid for 2.4.0-SNAPSHOT only.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It is possible to define static methods in a trait, but it comes with numerous limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>traits with static methods cannot be compiled statically or type checked. All static methods/properties/field are accessed dynamically (it&#8217;s a limitation from the JVM).</p>
+</li>
+<li>
+<p>the trait is interpreted as a <em>template</em> for the implementing class, which means that each implementing class will get its own static methods/properties/methods. So a
+static member declared on a trait doesn&#8217;t belong to the <code>Trait</code>, but to it&#8217;s implementing class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start with a simple example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait TestHelper {
+    public static boolean CALLED = false        <i class="conum" data-value="1"></i><b>(1)</b>
+    static void init() {                        <i class="conum" data-value="2"></i><b>(2)</b>
+        CALLED = true                           <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+}
+class Foo implements TestHelper {}
+Foo.init()                                      <i class="conum" data-value="4"></i><b>(4)</b>
+assert Foo.TestHelper__CALLED                   <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the static field is declared in the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>a static method is also declared in the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>the static field is updated <em>within</em> the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>a static method <em>init</em> is made available to the implementing class</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>the static field is <em>remapped</em> to avoid the diamond issue</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As usual, it is not recommanded to use public fields. Anyway, should you want this, you must understand that the following code would fail:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>Foo.CALLED = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>because there is <em>no</em> static field <em>CALLED</em> defined on the trait itself. Likewise, if you have two distinct implementing classes, each one gets a distinct static field:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Bar implements TestHelper {}              <i class="conum" data-value="1"></i><b>(1)</b>
+class Baz implements TestHelper {}              <i class="conum" data-value="2"></i><b>(2)</b>
+Bar.init()                                      <i class="conum" data-value="3"></i><b>(3)</b>
+assert Bar.TestHelper__CALLED                   <i class="conum" data-value="4"></i><b>(4)</b>
+assert !Baz.TestHelper__CALLED                  <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>class <code>Bar</code> implements the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>class <code>Baz</code> also implements the trait</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>init</code> is only called on <code>Bar</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>the static field <code>CALLED</code> on <code>Bar</code> is updated</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>but the static field <code>CALLED</code> on <code>Baz</code> is not, because it is <strong>distinct</strong></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inheritance_of_state_gotchas">Inheritance of state gotchas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We have seen that traits are stateful. It is possible for a trait to define fields or properties, but when a class implements a trait, it gets those fields/properties on
+a per-trait basis. So consider the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait IntCouple {
+    int x = 1
+    int y = 2
+    int sum() { x+y }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The trait defines two properties, <code>x</code> and <code>y</code>, as well as a <code>sum</code> method. Now let&#8217;s create a class which implements the trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class BaseElem implements IntCouple {
+    int f() { sum() }
+}
+def base = new BaseElem()
+assert base.f() == 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result of calling <code>f</code> is <code>3</code>, because <code>f</code> delegates to <code>sum</code> in the trait, which has state. But what if we write this instead?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>class Elem implements IntCouple {
+    int x = 3                                       <i class="conum" data-value="1"></i><b>(1)</b>
+    int y = 4                                       <i class="conum" data-value="2"></i><b>(2)</b>
+    int f() { sum() }                               <i class="conum" data-value="3"></i><b>(3)</b>
+}
+def elem = new Elem()</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Override property <code>x</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Override property <code>y</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Call <code>sum</code> from trait</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you call <code>elem.f()</code>, what is the expected output? Actually it is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>assert elem.f() == 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The reason is that the <code>sum</code> method accesses the <em>fields</em> of the trait. So it is using the <code>x</code> and <code>y</code> values defined
+in the trait. If you want to use the values from the implementing class, then you need to derefencence fields by using
+getters and setters, like in this last example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait IntCouple {
+    int x = 1
+    int y = 2
+    int sum() { getX()+getY() }
+}
+
+class Elem implements IntCouple {
+    int x = 3
+    int y = 4
+    int f() { sum() }
+}
+def elem = new Elem()
+assert elem.f() == 7</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limitations">Limitations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_compatibility_with_ast_transformations">Compatibility with AST transformations</h3>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Traits are not officially compatible with AST transformations. Some of them, like <code>@CompileStatic</code> will be applied
+on the trait itself (not on implementing classes), while others will apply on both the implementing class and the trait.
+There is absolutely no guarantee that an AST transformation will run on a trait as it does on a regular class, so use it
+at your own risk!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prefix_and_postfix_operations">Prefix and postfix operations</h3>
+<div class="paragraph">
+<p>Within traits, prefix and postfix operations are not allowed if they update a field of the trait:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint groovy language-groovy"><code>trait Counting {
+    int x
+    void inc() {
+        x++                             <i class="conum" data-value="1"></i><b>(1)</b>
+    }
+    void dec() {
+        --x                             <i class="conum" data-value="2"></i><b>(2)</b>
+    }
+}
+class Counter implements Counting {}
+def c = new Counter()
+c.inc()</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>x</code> is defined within the trait, postfix increment is not allowed</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>x</code> is defined within the trait, prefix decrement is not allowed</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A workaround is to use the <code>+=</code> operator instead.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 2.4.0-SNAPSHOT<br>
+Last updated 2020-07-08 06:17:00 +00:00
+</div>
+</div>
+</body>
+</html>

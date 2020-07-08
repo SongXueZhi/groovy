@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Originally-Created-By: 1.8.0_252-8u252-b09-1~16.04-b09 (Private Build)
+Export-Package: groovy.util;version="2.4.0.SNAPSHOT",groovy.util.slurp
+ ersupport;version="2.4.0.SNAPSHOT",groovy.xml;version="2.4.0.SNAPSHOT
+ ",groovy.xml.dom;version="2.4.0.SNAPSHOT",groovy.xml.streamingmarkups
+ upport;version="2.4.0.SNAPSHOT",org.codehaus.groovy.runtime;version="
+ 2.4.0.SNAPSHOT",org.codehaus.groovy.tools.xml;version="2.4.0.SNAPSHOT
+ "
+Bundle-SymbolicName: groovy-xml
+Bundle-Version: 2.4.0.SNAPSHOT
+Bundle-ManifestVersion: 2
+Import-Package: groovy.io;resolution:=optional,groovy.lang;resolution:
+ =optional,javax.xml.namespace;resolution:=optional,javax.xml.parsers;
+ resolution:=optional,javax.xml.transform;resolution:=optional,javax.x
+ ml.transform.dom;resolution:=optional,javax.xml.transform.stream;reso
+ lution:=optional,javax.xml.validation;resolution:=optional,javax.xml.
+ xpath;resolution:=optional,org.codehaus.groovy.reflection;resolution:
+ =optional,org.codehaus.groovy.runtime.typehandling;resolution:=option
+ al,org.codehaus.groovy.syntax;resolution:=optional,org.codehaus.groov
+ y.vmplugin.v7;resolution:=optional,org.w3c.dom;resolution:=optional,o
+ rg.xml.sax;resolution:=optional,org.xml.sax.ext;resolution:=optional,
+ org.xml.sax.helpers;resolution:=optional
+Created-By: 1.8.0_252 (Private Build)
+Tool: Bnd-2.1.0.20130426-122213
+Built-By: root
+Specification-Title: Groovy: a powerful, dynamic language for the JVM
+Specification-Version: 2.4.0.SNAPSHOT
+Specification-Vendor: The Codehaus
+Implementation-Title: Groovy: a powerful, dynamic language for the JVM
+Implementation-Version: 2.4.0.SNAPSHOT
+Implementation-Vendor: The Codehaus
+Bundle-Vendor: The Codehaus
+Bundle-ClassPath: .
+Eclipse-BuddyPolicy: dependent
+DynamicImport-Package: *
+

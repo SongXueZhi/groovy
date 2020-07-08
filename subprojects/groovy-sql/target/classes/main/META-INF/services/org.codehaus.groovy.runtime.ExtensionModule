@@ -1,0 +1,4 @@
+moduleName=groovy-sql
+moduleVersion=2.4.0-SNAPSHOT
+extensionClasses=org.codehaus.groovy.runtime.SqlGroovyMethods
+staticExtensionClasses=

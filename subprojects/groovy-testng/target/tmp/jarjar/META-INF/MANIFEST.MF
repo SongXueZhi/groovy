@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Originally-Created-By: 1.8.0_252-8u252-b09-1~16.04-b09 (Private Build)
+Export-Package: org.codehaus.groovy.testng;version="2.4.0.SNAPSHOT"
+Bundle-SymbolicName: groovy-testng
+Bundle-Version: 2.4.0.SNAPSHOT
+Bundle-ManifestVersion: 2
+Import-Package: groovy.lang;resolution:=optional,org.codehaus.groovy.p
+ lugin;resolution:=optional,org.codehaus.groovy.runtime;resolution:=op
+ tional
+Created-By: 1.8.0_252 (Private Build)
+Tool: Bnd-2.1.0.20130426-122213
+Built-By: root
+Specification-Title: Groovy: a powerful, dynamic language for the JVM
+Specification-Version: 2.4.0.SNAPSHOT
+Specification-Vendor: The Codehaus
+Implementation-Title: Groovy: a powerful, dynamic language for the JVM
+Implementation-Version: 2.4.0.SNAPSHOT
+Implementation-Vendor: The Codehaus
+Bundle-Vendor: The Codehaus
+Bundle-ClassPath: .
+Eclipse-BuddyPolicy: dependent
+DynamicImport-Package: *
+

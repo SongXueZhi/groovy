@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="groovy.util.logging.Slf4jTest" tests="13" skipped="0" failures="1" errors="0" timestamp="2020-07-08T06:32:21" hostname="e38ffdbd1463" time="2.62">
+  <properties/>
+  <testcase name="testLogWithInnerClasses_groovy6373" classname="groovy.util.logging.Slf4jTest" time="1.51"/>
+  <testcase name="testPrivateFinalStaticLogFieldAppears" classname="groovy.util.logging.Slf4jTest" time="0.094"/>
+  <testcase name="testClassAlreadyHasNamedLogField" classname="groovy.util.logging.Slf4jTest" time="0.044"/>
+  <testcase name="testPrivateFinalStaticNamedLogFieldAppears" classname="groovy.util.logging.Slf4jTest" time="0.047"/>
+  <testcase name="testLogGuard" classname="groovy.util.logging.Slf4jTest" time="0.086"/>
+  <testcase name="testLogFromStaticMethods" classname="groovy.util.logging.Slf4jTest" time="0.066"/>
+  <testcase name="testLogInfo" classname="groovy.util.logging.Slf4jTest" time="0.086"/>
+  <testcase name="testGroovy6873Regression" classname="groovy.util.logging.Slf4jTest" time="0.034">
+    <failure message="org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:&#10;script15941899432941725152869.groovy: 15: The current scope already contains a variable of the name folder&#10; @ line 15, column 25.&#10;                       def folder&#10;                           ^&#10;&#10;1 error&#10;" type="org.codehaus.groovy.control.MultipleCompilationErrorsException">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+script15941899432941725152869.groovy: 15: The current scope already contains a variable of the name folder
+ @ line 15, column 25.
+                       def folder
+                           ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+	at org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(CompilationUnit.java:1067)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:583)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:286)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:259)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:245)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:203)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:213)
+	at groovy.lang.GroovyClassLoader$parseClass.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at groovy.util.logging.Slf4jTest.testGroovy6873Regression(Slf4jTest.groovy:266)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:69)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:48)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:105)
+	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:355)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</failure>
+  </testcase>
+  <testcase name="testCustomCategory" classname="groovy.util.logging.Slf4jTest" time="0.039"/>
+  <testcase name="testLogInfoWithNamedLogger" classname="groovy.util.logging.Slf4jTest" time="0.07"/>
+  <testcase name="testLogTransformInteractionWithAIC_groovy6834" classname="groovy.util.logging.Slf4jTest" time="0.349"/>
+  <testcase name="testClassAlreadyHasLogField" classname="groovy.util.logging.Slf4jTest" time="0.068"/>
+  <testcase name="testDefaultCategory" classname="groovy.util.logging.Slf4jTest" time="0.102"/>
+  <system-out><![CDATA[LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+06:32:22.748 [Test worker] INFO  MyClass - outer called
+06:32:22.780 [Test worker] INFO  MyClass - inner called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+06:32:23.199 [Test worker] INFO  MyClass - (static) info called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+06:32:23.279 [Test worker] ERROR MyClass - error called
+06:32:23.284 [Test worker] WARN  MyClass - warn called
+06:32:23.284 [Test worker] INFO  MyClass - info called
+06:32:23.285 [Test worker] DEBUG MyClass - debug called
+06:32:23.289 [Test worker] TRACE MyClass - trace called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+06:32:23.364 [Test worker] ERROR customCategory - error called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+06:32:23.432 [Test worker] ERROR MyClass - error called
+06:32:23.433 [Test worker] WARN  MyClass - warn called
+06:32:23.433 [Test worker] INFO  MyClass - info called
+06:32:23.433 [Test worker] DEBUG MyClass - debug called
+06:32:23.433 [Test worker] TRACE MyClass - trace called
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+LOGBACK: No context given for groovy.util.logging.LogbackInterceptingAppender[null]
+06:32:23.945 [Test worker] INFO  MyClass - info called
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

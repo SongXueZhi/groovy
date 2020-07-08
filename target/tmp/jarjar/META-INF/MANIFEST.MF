@@ -1,0 +1,116 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Originally-Created-By: 1.8.0_252-8u252-b09-1~16.04-b09 (Private Build)
+Export-Package: com.googlecode.openbeans;version="2.4.0.SNAPSHOT",com.
+ googlecode.openbeans.beancontext;version="2.4.0.SNAPSHOT",groovy.bean
+ s;version="2.4.0.SNAPSHOT",groovy.grape;version="2.4.0.SNAPSHOT",groo
+ vy.inspect;version="2.4.0.SNAPSHOT",groovy.io;version="2.4.0.SNAPSHOT
+ ",groovy.lang;version="2.4.0.SNAPSHOT",groovy.security;version="2.4.0
+ .SNAPSHOT",groovy.time;version="2.4.0.SNAPSHOT",groovy.transform;vers
+ ion="2.4.0.SNAPSHOT",groovy.transform.builder;version="2.4.0.SNAPSHOT
+ ",groovy.transform.stc;version="2.4.0.SNAPSHOT",groovy.ui;version="2.
+ 4.0.SNAPSHOT",groovy.util;version="2.4.0.SNAPSHOT",groovy.util.loggin
+ g;version="2.4.0.SNAPSHOT",groovy.xml;version="2.4.0.SNAPSHOT",groovy
+ jarjarantlr;version="2.4.0.SNAPSHOT",groovyjarjarantlr.ASdebug;versio
+ n="2.4.0.SNAPSHOT",groovyjarjarantlr.actions.cpp;version="2.4.0.SNAPS
+ HOT",groovyjarjarantlr.actions.csharp;version="2.4.0.SNAPSHOT",groovy
+ jarjarantlr.actions.java;version="2.4.0.SNAPSHOT",groovyjarjarantlr.a
+ ctions.python;version="2.4.0.SNAPSHOT",groovyjarjarantlr.build;versio
+ n="2.4.0.SNAPSHOT",groovyjarjarantlr.collections;version="2.4.0.SNAPS
+ HOT",groovyjarjarantlr.collections.impl;version="2.4.0.SNAPSHOT",groo
+ vyjarjarantlr.debug;version="2.4.0.SNAPSHOT",groovyjarjarantlr.debug.
+ misc;version="2.4.0.SNAPSHOT",groovyjarjarantlr.preprocessor;version=
+ "2.4.0.SNAPSHOT",groovyjarjarasm.asm;version="2.4.0.SNAPSHOT",groovyj
+ arjarasm.asm.commons;version="2.4.0.SNAPSHOT",groovyjarjarasm.asm.sig
+ nature;version="2.4.0.SNAPSHOT",groovyjarjarasm.asm.tree;version="2.4
+ .0.SNAPSHOT",groovyjarjarasm.asm.util;version="2.4.0.SNAPSHOT",groovy
+ jarjarcommonscli;version="2.4.0.SNAPSHOT",org.apache.harmony.beans;ve
+ rsion="2.4.0.SNAPSHOT",org.apache.harmony.beans.editors;version="2.4.
+ 0.SNAPSHOT",org.apache.harmony.beans.internal.nls;version="2.4.0.SNAP
+ SHOT",org.codehaus.groovy;version="2.4.0.SNAPSHOT",org.codehaus.groov
+ y.antlr;version="2.4.0.SNAPSHOT",org.codehaus.groovy.antlr.java;versi
+ on="2.4.0.SNAPSHOT",org.codehaus.groovy.antlr.parser;version="2.4.0.S
+ NAPSHOT",org.codehaus.groovy.antlr.treewalker;version="2.4.0.SNAPSHOT
+ ",org.codehaus.groovy.ast;version="2.4.0.SNAPSHOT",org.codehaus.groov
+ y.ast.builder;version="2.4.0.SNAPSHOT",org.codehaus.groovy.ast.expr;v
+ ersion="2.4.0.SNAPSHOT",org.codehaus.groovy.ast.stmt;version="2.4.0.S
+ NAPSHOT",org.codehaus.groovy.ast.tools;version="2.4.0.SNAPSHOT",org.c
+ odehaus.groovy.classgen;version="2.4.0.SNAPSHOT",org.codehaus.groovy.
+ classgen.asm;version="2.4.0.SNAPSHOT",org.codehaus.groovy.classgen.as
+ m.indy;version="2.4.0.SNAPSHOT",org.codehaus.groovy.classgen.asm.sc;v
+ ersion="2.4.0.SNAPSHOT",org.codehaus.groovy.control;version="2.4.0.SN
+ APSHOT",org.codehaus.groovy.control.customizers;version="2.4.0.SNAPSH
+ OT",org.codehaus.groovy.control.customizers.builder;version="2.4.0.SN
+ APSHOT",org.codehaus.groovy.control.io;version="2.4.0.SNAPSHOT",org.c
+ odehaus.groovy.control.messages;version="2.4.0.SNAPSHOT",org.codehaus
+ .groovy.plugin;version="2.4.0.SNAPSHOT",org.codehaus.groovy.reflectio
+ n;version="2.4.0.SNAPSHOT",org.codehaus.groovy.reflection.android;ver
+ sion="2.4.0.SNAPSHOT",org.codehaus.groovy.reflection.stdclasses;versi
+ on="2.4.0.SNAPSHOT",org.codehaus.groovy.runtime;version="2.4.0.SNAPSH
+ OT",org.codehaus.groovy.runtime.callsite;version="2.4.0.SNAPSHOT",org
+ .codehaus.groovy.runtime.dgmimpl;version="2.4.0.SNAPSHOT",org.codehau
+ s.groovy.runtime.dgmimpl.arrays;version="2.4.0.SNAPSHOT",org.codehaus
+ .groovy.runtime.m12n;version="2.4.0.SNAPSHOT",org.codehaus.groovy.run
+ time.memoize;version="2.4.0.SNAPSHOT",org.codehaus.groovy.runtime.met
+ aclass;version="2.4.0.SNAPSHOT",org.codehaus.groovy.runtime.powerasse
+ rt;version="2.4.0.SNAPSHOT",org.codehaus.groovy.runtime.typehandling;
+ version="2.4.0.SNAPSHOT",org.codehaus.groovy.runtime.wrappers;version
+ ="2.4.0.SNAPSHOT",org.codehaus.groovy.syntax;version="2.4.0.SNAPSHOT"
+ ,org.codehaus.groovy.tools;version="2.4.0.SNAPSHOT",org.codehaus.groo
+ vy.tools.ast;version="2.4.0.SNAPSHOT",org.codehaus.groovy.tools.gse;v
+ ersion="2.4.0.SNAPSHOT",org.codehaus.groovy.tools.javac;version="2.4.
+ 0.SNAPSHOT",org.codehaus.groovy.tools.shell;version="2.4.0.SNAPSHOT",
+ org.codehaus.groovy.tools.shell.util;version="2.4.0.SNAPSHOT",org.cod
+ ehaus.groovy.tools.xml;version="2.4.0.SNAPSHOT",org.codehaus.groovy.t
+ ransform;version="2.4.0.SNAPSHOT",org.codehaus.groovy.transform.sc;ve
+ rsion="2.4.0.SNAPSHOT",org.codehaus.groovy.transform.sc.transformers;
+ version="2.4.0.SNAPSHOT",org.codehaus.groovy.transform.stc;version="2
+ .4.0.SNAPSHOT",org.codehaus.groovy.transform.tailrec;version="2.4.0.S
+ NAPSHOT",org.codehaus.groovy.transform.trait;version="2.4.0.SNAPSHOT"
+ ,org.codehaus.groovy.util;version="2.4.0.SNAPSHOT",org.codehaus.groov
+ y.vmplugin;version="2.4.0.SNAPSHOT",org.codehaus.groovy.vmplugin.v5;v
+ ersion="2.4.0.SNAPSHOT",org.codehaus.groovy.vmplugin.v6;version="2.4.
+ 0.SNAPSHOT",org.codehaus.groovy.vmplugin.v7;version="2.4.0.SNAPSHOT",
+ overview.html;version="2.4.0.SNAPSHOT",overviewj.html;version="2.4.0.
+ SNAPSHOT"
+Bundle-SymbolicName: groovy
+Bundle-Version: 2.4.0.SNAPSHOT
+Bundle-Name: Groovy Runtime
+Bundle-ManifestVersion: 2
+Import-Package: com.thoughtworks.xstream;resolution:=optional;version=
+ "[1.4,2)",javax.swing;resolution:=optional,javax.swing.border;resolut
+ ion:=optional,javax.swing.event;resolution:=optional,javax.swing.text
+ ;resolution:=optional,javax.swing.tree;resolution:=optional,javax.xml
+ .parsers;resolution:=optional,org.apache.ivy;resolution:=optional;ver
+ sion="[2.0,3)",org.apache.ivy.core.cache;resolution:=optional;version
+ ="[2.0,3)",org.apache.ivy.core.event;resolution:=optional;version="[2
+ .0,3)",org.apache.ivy.core.event.download;resolution:=optional;versio
+ n="[2.0,3)",org.apache.ivy.core.event.resolve;resolution:=optional;ve
+ rsion="[2.0,3)",org.apache.ivy.core.module.descriptor;resolution:=opt
+ ional;version="[2.0,3)",org.apache.ivy.core.module.id;resolution:=opt
+ ional;version="[2.0,3)",org.apache.ivy.core.report;resolution:=option
+ al;version="[2.0,3)",org.apache.ivy.core.resolve;resolution:=optional
+ ;version="[2.0,3)",org.apache.ivy.core.settings;resolution:=optional;
+ version="[2.0,3)",org.apache.ivy.plugins.matcher;resolution:=optional
+ ;version="[2.0,3)",org.apache.ivy.plugins.resolver;resolution:=option
+ al;version="[2.0,3)",org.apache.ivy.util;resolution:=optional;version
+ ="[2.0,3)",org.fusesource.jansi;resolution:=optional;version="[1.11,2
+ )",org.w3c.dom;resolution:=optional,org.xml.sax;resolution:=optional,
+ org.xml.sax.helpers;resolution:=optional
+Created-By: 1.8.0_252 (Private Build)
+Tool: Bnd-2.1.0.20130426-122213
+Built-By: root
+Extension-Name: groovy
+Specification-Title: Groovy: a powerful, dynamic language for the JVM
+Specification-Version: 2.4.0.SNAPSHOT
+Specification-Vendor: The Codehaus
+Implementation-Title: Groovy: a powerful, dynamic language for the JVM
+Implementation-Version: 2.4.0.SNAPSHOT
+Implementation-Vendor: The Codehaus
+Bundle-Description: Groovy Runtime
+Bundle-Vendor: The Codehaus
+Bundle-ClassPath: .
+Eclipse-BuddyPolicy: dependent
+DynamicImport-Package: *
+Main-class: groovy.ui.GroovyMain
+

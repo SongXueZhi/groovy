@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Originally-Created-By: 1.8.0_252-8u252-b09-1~16.04-b09 (Private Build)
+Export-Package: groovy.inspect;version="2.4.0.SNAPSHOT",groovy.inspect
+ .swingui;version="2.4.0.SNAPSHOT",groovy.ui;version="2.4.0.SNAPSHOT",
+ groovy.ui.icons;version="2.4.0.SNAPSHOT",groovy.ui.text;version="2.4.
+ 0.SNAPSHOT",groovy.ui.view;version="2.4.0.SNAPSHOT"
+Bundle-SymbolicName: groovy-console
+Bundle-Version: 2.4.0.SNAPSHOT
+Bundle-ManifestVersion: 2
+Import-Package: groovy.grape;resolution:=optional,groovy.lang;resoluti
+ on:=optional,groovy.swing;resolution:=optional,groovy.text;resolution
+ :=optional,groovy.transform;resolution:=optional,groovy.util;resoluti
+ on:=optional,groovyjarjarasm.asm;resolution:=optional,groovyjarjarasm
+ .asm.util;resolution:=optional,javax.accessibility;resolution:=option
+ al,javax.print.attribute.standard;resolution:=optional,javax.swing;re
+ solution:=optional,javax.swing.event;resolution:=optional,javax.swing
+ .filechooser;resolution:=optional,javax.swing.plaf;resolution:=option
+ al,javax.swing.text;resolution:=optional,javax.swing.text.html;resolu
+ tion:=optional,javax.swing.tree;resolution:=optional,javax.swing.undo
+ ;resolution:=optional,org.apache.ivy.core.event;resolution:=optional;
+ version="[2.0,3)",org.apache.ivy.core.event.download;resolution:=opti
+ onal;version="[2.0,3)",org.apache.ivy.core.event.resolve;resolution:=
+ optional;version="[2.0,3)",org.codehaus.groovy;resolution:=optional,o
+ rg.codehaus.groovy.ast;resolution:=optional,org.codehaus.groovy.ast.e
+ xpr;resolution:=optional,org.codehaus.groovy.ast.stmt;resolution:=opt
+ ional,org.codehaus.groovy.classgen;resolution:=optional,org.codehaus.
+ groovy.classgen.asm;resolution:=optional,org.codehaus.groovy.control;
+ resolution:=optional,org.codehaus.groovy.control.customizers;resoluti
+ on:=optional,org.codehaus.groovy.control.messages;resolution:=optiona
+ l,org.codehaus.groovy.reflection;resolution:=optional,org.codehaus.gr
+ oovy.runtime;resolution:=optional,org.codehaus.groovy.runtime.typehan
+ dling;resolution:=optional,org.codehaus.groovy.runtime.wrappers;resol
+ ution:=optional,org.codehaus.groovy.syntax;resolution:=optional,org.c
+ odehaus.groovy.vmplugin.v7;resolution:=optional,org.xml.sax;resolutio
+ n:=optional,org.xml.sax.helpers;resolution:=optional,sun.awt;resoluti
+ on:=optional,sun.java2d.pipe;resolution:=optional
+Created-By: 1.8.0_252 (Private Build)
+Tool: Bnd-2.1.0.20130426-122213
+Built-By: root
+Specification-Title: Groovy: a powerful, dynamic language for the JVM
+Specification-Version: 2.4.0.SNAPSHOT
+Specification-Vendor: The Codehaus
+Implementation-Title: Groovy: a powerful, dynamic language for the JVM
+Implementation-Version: 2.4.0.SNAPSHOT
+Implementation-Vendor: The Codehaus
+Bundle-Vendor: The Codehaus
+Bundle-ClassPath: .
+Eclipse-BuddyPolicy: dependent
+DynamicImport-Package: *
+

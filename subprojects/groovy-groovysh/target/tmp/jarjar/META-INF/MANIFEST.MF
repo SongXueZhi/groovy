@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.3
+Originally-Created-By: 1.8.0_252-8u252-b09-1~16.04-b09 (Private Build)
+Export-Package: org.codehaus.groovy.tools.shell;version="2.4.0.SNAPSHO
+ T",org.codehaus.groovy.tools.shell.commands;version="2.4.0.SNAPSHOT",
+ org.codehaus.groovy.tools.shell.completion;version="2.4.0.SNAPSHOT",o
+ rg.codehaus.groovy.tools.shell.util;version="2.4.0.SNAPSHOT"
+Bundle-SymbolicName: groovy-groovysh
+Bundle-Version: 2.4.0.SNAPSHOT
+Bundle-ManifestVersion: 2
+Import-Package: groovy.inspect.swingui;resolution:=optional,groovy.lan
+ g;resolution:=optional,groovy.util;resolution:=optional,groovyjarjara
+ ntlr;resolution:=optional,groovyjarjarantlr.collections;resolution:=o
+ ptional,groovyjarjarantlr.collections.impl;resolution:=optional,javax
+ .swing;resolution:=optional,jline;resolution:=optional,jline.console;
+ resolution:=optional,jline.console.completer;resolution:=optional,jli
+ ne.console.history;resolution:=optional,jline.internal;resolution:=op
+ tional,org.codehaus.groovy.antlr;resolution:=optional,org.codehaus.gr
+ oovy.antlr.parser;resolution:=optional,org.codehaus.groovy.ast;resolu
+ tion:=optional,org.codehaus.groovy.ast.expr;resolution:=optional,org.
+ codehaus.groovy.ast.stmt;resolution:=optional,org.codehaus.groovy.cla
+ ssgen;resolution:=optional,org.codehaus.groovy.control;resolution:=op
+ tional,org.codehaus.groovy.reflection;resolution:=optional,org.codeha
+ us.groovy.runtime;resolution:=optional,org.codehaus.groovy.runtime.po
+ werassert;resolution:=optional,org.codehaus.groovy.runtime.typehandli
+ ng;resolution:=optional,org.codehaus.groovy.runtime.wrappers;resoluti
+ on:=optional,org.codehaus.groovy.transform;resolution:=optional,org.c
+ odehaus.groovy.vmplugin.v7;resolution:=optional,org.fusesource.jansi;
+ resolution:=optional;version="[1.11,2)"
+Created-By: 1.8.0_252 (Private Build)
+Tool: Bnd-2.1.0.20130426-122213
+Built-By: root
+Specification-Title: Groovy: a powerful, dynamic language for the JVM
+Specification-Version: 2.4.0.SNAPSHOT
+Specification-Vendor: The Codehaus
+Implementation-Title: Groovy: a powerful, dynamic language for the JVM
+Implementation-Version: 2.4.0.SNAPSHOT
+Implementation-Vendor: The Codehaus
+Bundle-Vendor: The Codehaus
+Bundle-ClassPath: .
+Eclipse-BuddyPolicy: dependent
+DynamicImport-Package: *
+
